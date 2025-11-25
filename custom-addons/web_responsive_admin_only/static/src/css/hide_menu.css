@@ -1,4 +1,0 @@
-/* Скрываем блок "App Menu Preferences" (fa-tint) для всех, кроме админа (uid=2) */
-body:not(.oe_uid_2) .o-dropdown--no-caret {
-    display: none !important;
-}
