@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Наследуем шаблон UserMenu из web_responsive -->
+    <template id="hide_apps_preferences_template" inherit_id="web.UserMenu" name="Hide Apps and Preferences for Non-Admins">
+        <!-- Скрываем Apps menu для не-администраторов -->
+        <xpath expr="//a[@id='appSwitcherMenuLink']" position="attributes">
+            <attribute name="t-if">widget.get_context().get('uid') == 2 or widget.get_context().get('group_system', False)</attribute>
+        </xpath>
+        
+        <!-- Скрываем Preferences/Settings menu для не-администраторов -->
+        <xpath expr="//a[@href='/web/responsive_preferences']" position="attributes">
+            <attribute name="t-if">widget.get_context().get('uid') == 2 or widget.get_context().get('group_system', False)</attribute>
+        </xpath>
+    </template>
+</odoo>
