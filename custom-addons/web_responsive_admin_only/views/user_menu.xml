@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Hide theme switcher (water drop icon) for non-admin users -->
-    <template id="user_menu_theme_admin_only" inherit_id="web_responsive.UserMenu" name="Hide Theme Switcher for Non-Admin">
-        <xpath expr="//div[hasclass('o_dropdown_toggler')][.//i[contains(@class, 'fa-tint')]]" position="attributes">
+    <!-- Hide theme switcher (water drop icon) for non-admin users - primary selector -->
+    <template id="user_menu_theme_admin_only_primary" inherit_id="web.UserMenu" name="Hide Theme Switcher for Non-Admin - Primary">
+        <xpath expr="//i[contains(@class, 'fa-tint')]/parent::*" position="attributes">
             <attribute name="t-if">widget.env.user.has_group('base.group_system')</attribute>
         </xpath>
     </template>
     
-    <!-- Hide search type switcher for non-admin users -->
-    <template id="user_menu_search_admin_only" inherit_id="web_responsive.UserMenu" name="Hide Search Switcher for Non-Admin">
-        <xpath expr="//div[hasclass('o_dropdown_toggler')][.//i[contains(@class, 'fa-search')]]" position="attributes">
+    <!-- Hide theme switcher (water drop icon) for non-admin users - secondary selector -->
+    <template id="user_menu_theme_admin_only_secondary" inherit_id="web.UserMenu" name="Hide Theme Switcher for Non-Admin - Secondary">
+        <xpath expr="//i[@aria-label='Theme Switcher']/parent::*" position="attributes">
+            <attribute name="t-if">widget.env.user.has_group('base.group_system')</attribute>
+        </xpath>
+    </template>
+    
+    <!-- Hide search type switcher for non-admin users - primary selector -->
+    <template id="user_menu_search_admin_only_primary" inherit_id="web.UserMenu" name="Hide Search Switcher for Non-Admin - Primary">
+        <xpath expr="//i[contains(@class, 'fa-search')]/parent::*" position="attributes">
+            <attribute name="t-if">widget.env.user.has_group('base.group_system')</attribute>
+        </xpath>
+    </template>
+    
+    <!-- Hide search type switcher for non-admin users - secondary selector -->
+    <template id="user_menu_search_admin_only_secondary" inherit_id="web.UserMenu" name="Hide Search Switcher for Non-Admin - Secondary">
+        <xpath expr="//i[@aria-label='Search Switcher']/parent::*" position="attributes">
             <attribute name="t-if">widget.env.user.has_group('base.group_system')</attribute>
         </xpath>
     </template>

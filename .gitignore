@@ -1,43 +1,42 @@
 ```
-# Python
-__pycache__/
+# Compiled Python files
 *.pyc
-*.pyo
-*.pyd
-.Python
-env/
-venv/
-.venv/
-pip-log.txt
-pip-delete-this-directory.txt
+__pycache__/
 
 # Odoo specific
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+build/
+dist/
 *.pot
+*.pot~
 *.po
-*.mo
-addons/
-*.xml.bak
-*.csv.bak
+*.po~
+*i18n-cache*
+
+# Dependencies
+node_modules/
+.venv/
+venv/
+env/
 
 # Logs
 *.log
-*.tmp
 
 # Editor files
 .vscode/
 .idea/
 *.swp
 *.swo
+*.tmp
 
-# Environment
+# Environment files
 .env
 .env.local
 *.env.*
-
-# Coverage
-.coverage
-coverage/
-htmlcov/
 
 # OS generated files
 .DS_Store
