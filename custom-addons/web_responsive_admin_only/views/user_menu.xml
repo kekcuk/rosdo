@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="user_menu_responsive_admin_only" inherit_id="web_responsive.UserMenu" name="Hide Responsive Controls for Non-Admin">
+        <xpath expr="//div[contains(@class, 'o-dropdown--no-caret') and .//i[contains(@class, 'fa-tint')]]" position="attributes">
+            <attribute name="t-if">user_context.get('uid') == 2</attribute>
+        </xpath>
+    </template>
+</odoo>

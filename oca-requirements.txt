@@ -1,0 +1,125 @@
+# From account-financial-tools
+# generated from manifests external_dependencies
+freezegun
+numpy-financial<=1.0.0
+numpy>=1.15
+python-dateutil
+
+# From account-invoicing
+# generated from manifests external_dependencies
+openupgradelib
+
+# From bank-statement-import
+# generated from manifests external_dependencies
+ofxparse
+
+# From brand
+# generated from manifests external_dependencies
+openupgradelib
+
+# From community-data-files
+# generated from manifests external_dependencies
+pycountry
+schwifty==2024.4.0
+
+# From contract
+# generated from manifests external_dependencies
+python-dateutil
+
+# From ddmrp
+# generated from manifests external_dependencies
+pandas>=0.25.3
+
+# From geospatial
+# generated from manifests external_dependencies
+geojson
+shapely
+
+# From hr
+# generated from manifests external_dependencies
+python-dateutil
+
+# From partner-contact
+# generated from manifests external_dependencies
+email-validator
+
+# From product-attribute
+# generated from manifests external_dependencies
+openupgradelib
+
+# From queue
+# generated from manifests external_dependencies
+requests
+
+# From reporting-engine
+# generated from manifests external_dependencies
+mock
+openpyxl
+py3o.formats
+py3o.template
+
+# From sale-workflow
+# generated from manifests external_dependencies
+openupgradelib
+
+# From server-auth
+# generated from manifests external_dependencies
+cryptography
+email_validator
+lxml
+pyjwt
+pysaml2
+python-jose
+
+# From server-env
+# generated from manifests external_dependencies
+cryptography
+
+# From server-tools
+# generated from manifests external_dependencies
+astor
+cryptography
+dataclasses
+odoo_test_helper
+odoorpc
+openpyxl
+openupgradelib
+paramiko<4.0.0
+pysftp
+sentry_sdk>=2.0.0,<=2.22.0
+
+# From server-ux
+# generated from manifests external_dependencies
+openupgradelib
+pdf2image
+pyzbar
+
+# From social
+# generated from manifests external_dependencies
+cairosvg
+lottie
+python-telegram-bot
+requests_toolbelt
+
+# From stock-logistics-barcode
+# generated from manifests external_dependencies
+python-barcode
+
+# From stock-logistics-warehouse
+# generated from manifests external_dependencies
+openupgradelib
+
+# From stock-logistics-workflow
+# generated from manifests external_dependencies
+openupgradelib
+
+# From timesheet
+# generated from manifests external_dependencies
+freezegun
+
+# From web
+# generated from manifests external_dependencies
+beautifulsoup4
+bokeh==3.6.3
+mpld3==0.5.10
+

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ОГРН / ОГРНИП -->
+    <record id="view_partner_form_inherit_ogrn" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit.ogrn</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="ogrn"
+                       invisible="is_company == False"
+                       placeholder="ОГРН (13 цифр)"/>
+                <field name="ogrnip"
+                       invisible="is_company == True"
+                       placeholder="ОГРНИП (15 цифр)"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Скрыть поле 'function' ТОЛЬКО в форме партнёра -->
+    <record id="view_partner_form_hide_function" model="ir.ui.view">
+        <field name="name">res.partner.form.hide.function</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="function" position="replace"/>
+        </field>
+    </record>
+</odoo>
