@@ -1,44 +1,32 @@
 ```
-# Compiled Python files
+# Compiled and build artifacts
 *.pyc
 __pycache__/
-
-# Odoo specific
-*.pyo
-*.pyd
-*.so
-*.egg-info/
-.eggs/
-build/
-dist/
-*.pot
-*.pot~
-*.po
-*.po~
-*i18n-cache*
+*.o
+*.obj
 
 # Dependencies
-node_modules/
 .venv/
 venv/
-env/
+node_modules/
 
-# Logs
+# Logs and temp files
 *.log
-
-# Editor files
-.vscode/
-.idea/
-*.swp
-*.swo
 *.tmp
+*.swp
 
-# Environment files
+# Environment
 .env
 .env.local
 *.env.*
 
-# OS generated files
-.DS_Store
-Thumbs.db
+# Editors
+.vscode/
+.idea/
+
+# Odoo specific
+*.pot
+*.po
+.mo/
+addons/
 ```
