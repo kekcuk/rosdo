@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="user_menu_responsive_admin_only" inherit_id="web_responsive.UserMenu" name="Hide Responsive Controls for Non-Admin">
+    <!-- Скрываем элементы темы для не-администраторов -->
+    <template id="user_menu_responsive_theme_admin_only" inherit_id="web_responsive.UserMenu" name="Hide Theme Controls for Non-Admin">
         <xpath expr="//div[contains(@class, 'o-dropdown--no-caret') and .//i[contains(@class, 'fa-tint')]]" position="attributes">
-            <attribute name="t-if">user_context.get('uid') == 2</attribute>
+            <attribute name="t-if">widget.env.user_groups_id and 'base.group_system' in widget.env.user_groups_id</attribute>
+        </xpath>
+    </template>
+    
+    <!-- Скрываем меню Apps для не-администраторов -->
+    <template id="user_menu_responsive_apps_admin_only" inherit_id="web_responsive.UserMenu" name="Hide Apps for Non-Admin">
+        <xpath expr="//a[contains(., 'Apps') or contains(., 'apps') or contains(@data-menu, 'apps') or contains(@data-menu, 'Apps')]" position="attributes">
+            <attribute name="t-if">widget.env.user_groups_id and 'base.group_system' in widget.env.user_groups_id</attribute>
+        </xpath>
+    </template>
+    
+    <!-- Скрываем меню Preferences/Settings для не-администраторов -->
+    <template id="user_menu_responsive_settings_admin_only" inherit_id="web_responsive.UserMenu" name="Hide Preferences for Non-Admin">
+        <xpath expr="//a[contains(., 'Preferences') or contains(., 'preferences') or contains(., 'Settings') or contains(., 'settings') or contains(@data-menu, 'settings') or contains(@data-menu, 'Settings')]" position="attributes">
+            <attribute name="t-if">widget.env.user_groups_id and 'base.group_system' in widget.env.user_groups_id</attribute>
         </xpath>
     </template>
 </odoo>

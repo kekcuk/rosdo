@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Альтернативный подход - скрываем через CSS классы -->
+    <template id="hide_apps_preferences_extended" inherit_id="web.UserMenu" name="Hide Apps and Preferences Extended">
+        <!-- Скрываем Apps menu через класс -->
+        <xpath expr="//a[contains(@class, 'app-switcher-menu-link') or @id='appSwitcherMenuLink']" position="attributes">
+            <attribute name="t-if">widget.get_context().get('uid') == 2 or widget.get_context().get('group_system', False)</attribute>
+        </xpath>
+        
+        <!-- Скрываем Preferences/Settings menu через класс -->
+        <xpath expr="//a[contains(@class, 'responsive-preferences') or @href='/web/responsive_preferences']" position="attributes">
+            <attribute name="t-if">widget.get_context().get('uid') == 2 or widget.get_context().get('group_system', False)</attribute>
+        </xpath>
+    </template>
+    
+    <!-- Также добавим вариант для случая, если элементы имеют другие атрибуты -->
+    <template id="hide_apps_preferences_by_icon" inherit_id="web.UserMenu" name="Hide Apps and Preferences by Icon">
+        <!-- Скрываем элементы, содержащие иконку приложений -->
+        <xpath expr="//i[contains(@class, 'fa-th-large')]/.." position="attributes">
+            <attribute name="t-if">widget.get_context().get('uid') == 2 or widget.get_context().get('group_system', False)</attribute>
+        </xpath>
+        
+        <!-- Скрываем элементы, содержащие иконку настроек -->
+        <xpath expr="//i[contains(@class, 'fa-cog') or contains(@class, 'fa-sliders')]/.." position="attributes">
+            <attribute name="t-if">widget.get_context().get('uid') == 2 or widget.get_context().get('group_system', False)</attribute>
+        </xpath>
+    </template>
+</odoo>
