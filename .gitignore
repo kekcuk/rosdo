@@ -1,42 +1,45 @@
-# Virtual environment
-venv/
-.env/
-.venv/
-
-# Odoo config (секреты!)
-odoo.conf
-
+```
 # Python
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 .Python
-.pytest_cache/
-.coverage
-.mypy_cache/
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Odoo specific
+*.pot
+*.po
+*.mo
+addons/
+*.xml.bak
+*.csv.bak
 
 # Logs
 *.log
+*.tmp
 
-# IDE / Editors
+# Editor files
 .vscode/
 .idea/
 *.swp
 *.swo
 
-# OS
+# Environment
+.env
+.env.local
+*.env.*
+
+# Coverage
+.coverage
+coverage/
+htmlcov/
+
+# OS generated files
 .DS_Store
 Thumbs.db
-
-# Odoo filestore (если вдруг окажется здесь)
-filestore/
-
-# Build artifacts
-*.egg-info/
-dist/
-build/
-
-# Backup files
-*~
-all-addons/
+```

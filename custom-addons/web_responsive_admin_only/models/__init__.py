@@ -1,0 +1,1 @@
+from . import web_responsive_controller
